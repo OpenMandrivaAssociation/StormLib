@@ -49,7 +49,7 @@ rm -v -r src/{zlib,bzip2}
 %make_build
 
 %install
-%make_install - C build
+%make_install -C build
 %ifarch x86_64
 mv -v %{buildroot}/%{_prefix}/lib %{buildroot}/%{_libdir}
 %endif
