@@ -1,4 +1,7 @@
-%define soname libstorm
+%define libname %mklibname storm %{major}
+%define develname %mklibname storm -d
+
+#define soname libstorm
 %define sover 9
 
 Name:           StormLib
@@ -9,7 +12,6 @@ License:        MIT
 Group:          Development/Libraries/C and C++
 Url:            http://www.zezula.net/mpq.html
 Source0:        https://github.com/ladislav-zezula/StormLib/archive/v%{version}/StormLib-%{version}.tar.gz
-#Patch0:         clean-system-tomcrypt.patch
 
 BuildRequires:  cmake
 BuildRequires:  pkgconfig(libtomcrypt)
@@ -20,20 +22,20 @@ BuildRequires:  pkgconfig(zlib)
 %description
 StomLib library, an open-source project that can work with Blizzard MPQ archives.
 
-%package        devel
+%package -n %{develname}
 Summary:        Development files for %{name}
 Group:          Development/Libraries/C and C++
 Requires:       %{soname}%{sover} = %{version}
 
-%description    devel
+%description -n %{develname}
 StomLib library, an open-source project that can work with Blizzard MPQ archives.
 This package contains development files for %{name}.
 
-%package     -n %{soname}%{sover}
+%package -n %{libname}
 Summary:        %{name} library
 Group:          System/Libraries
 
-%description -n %{soname}%{sover}
+%description -n %{libname}
 StomLib library, an open-source project that can work with Blizzard MPQ archives.
 This package contains shared library for %{name}.
 
@@ -50,16 +52,12 @@ rm -v -r src/{zlib,bzip2}
 
 %install
 %make_install -C build
-%ifarch x86_64
-mv -v %{buildroot}/%{_prefix}/lib %{buildroot}/%{_libdir}
-%endif
 
-
-%files -n %{soname}%{sover}
+%files -n %{libname}
 %defattr(-,root,root)
 %{_libdir}/%{soname}.so.%{sover}*
 
-%files devel
+%files -n %{develname}
 %defattr(-,root,root)
 %doc README.md
 %license LICENSE
