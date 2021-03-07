@@ -56,11 +56,11 @@ mv -v %{buildroot}/%{_prefix}/lib %{buildroot}/%{_libdir}
 
 %files -n %{libname}
 %defattr(-,root,root)
-#{_libdir}/%{soname}.so.%{major}*
+%{_libdir}/%{soname}.so.%{major}*
 
 %files -n %{develname}
 %defattr(-,root,root)
 %doc README.md
 %license LICENSE
 %{_includedir}/Storm*
-#{_libdir}/%{soname}.so
+%{_libdir}/%{soname}.so
