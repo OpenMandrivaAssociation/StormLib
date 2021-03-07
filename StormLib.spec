@@ -52,7 +52,9 @@ rm -v -r src/{zlib,bzip2}
 
 %install
 %make_install -C build
+%ifnarch %{ix86} %{arm}
 mv -v %{buildroot}/%{_prefix}/lib %{buildroot}/%{_libdir}
+%endif
 
 %files -n %{libname}
 %defattr(-,root,root)
