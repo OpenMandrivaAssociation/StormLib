@@ -55,7 +55,7 @@ rm -v -r src/{zlib,bzip2}
 
 %files -n %{libname}
 %defattr(-,root,root)
-%{_libdir}/%{soname}.so.%{major}*
+#{_libdir}/%{soname}.so.%{major}*
 
 %files -n %{develname}
 %defattr(-,root,root)
