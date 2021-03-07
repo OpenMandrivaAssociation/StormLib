@@ -62,4 +62,4 @@ rm -v -r src/{zlib,bzip2}
 %doc README.md
 %license LICENSE
 %{_includedir}/Storm*
-%{_libdir}/%{soname}.so
+#{_libdir}/%{soname}.so
