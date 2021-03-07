@@ -9,7 +9,7 @@ License:        MIT
 Group:          Development/Libraries/C and C++
 Url:            http://www.zezula.net/mpq.html
 Source0:        https://github.com/ladislav-zezula/StormLib/archive/v%{version}/StormLib-%{version}.tar.gz
-Patch0:         clean-system-tomcrypt.patch
+#Patch0:         clean-system-tomcrypt.patch
 
 BuildRequires:  cmake
 BuildRequires:  pkgconfig(libtomcrypt)
@@ -42,7 +42,7 @@ This package contains shared library for %{name}.
 %autopatch -p1
 
 # Remove bundled libraries (we use system provided ones)
-rm -v -r src/{zlib,bzip2,libtomcrypt,libtommath}
+rm -v -r src/{zlib,bzip2}
 
 %build
 %cmake -DBUILD_SHARED_LIBS=ON -DSTORM_BUILD_TESTS=OFF -DBUILD_DYNAMIC_MODULE=ON -DWITH_LIBTOMCRYPT=ON
