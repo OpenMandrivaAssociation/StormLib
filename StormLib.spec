@@ -52,6 +52,7 @@ rm -v -r src/{zlib,bzip2}
 
 %install
 %make_install -C build
+mv -v %{buildroot}/%{_prefix}/lib %{buildroot}/%{_libdir}
 
 %files -n %{libname}
 %defattr(-,root,root)
