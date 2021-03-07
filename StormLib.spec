@@ -61,7 +61,7 @@ mv -v %{buildroot}/%{_prefix}/lib %{buildroot}/%{_libdir}
 
 %files devel
 %defattr(-,root,root)
-%doc README
+%doc README.md
 %license LICENSE
 %{_includedir}/Storm*
 %{_libdir}/%{soname}.so
