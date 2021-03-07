@@ -1,8 +1,8 @@
 %define libname %mklibname storm %{major}
 %define develname %mklibname storm -d
 
-#define soname libstorm
-%define sover 9
+%define soname libstorm
+%define major 9
 
 Name:           StormLib
 Version:        9.23
@@ -25,7 +25,7 @@ StomLib library, an open-source project that can work with Blizzard MPQ archives
 %package -n %{develname}
 Summary:        Development files for %{name}
 Group:          Development/Libraries/C and C++
-Requires:       %{soname}%{sover} = %{version}
+Requires:	%{libname} = %{version}-%{release}
 
 %description -n %{develname}
 StomLib library, an open-source project that can work with Blizzard MPQ archives.
@@ -55,7 +55,7 @@ rm -v -r src/{zlib,bzip2}
 
 %files -n %{libname}
 %defattr(-,root,root)
-%{_libdir}/%{soname}.so.%{sover}*
+%{_libdir}/%{soname}.so.%{major}*
 
 %files -n %{develname}
 %defattr(-,root,root)
