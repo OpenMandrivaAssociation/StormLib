@@ -6,7 +6,7 @@
 
 Name:           StormLib
 Version:        9.24
-Release:        1
+Release:        2
 Summary:        Library for work with Blizzard MPQ archive
 License:        MIT
 Group:          Development/Libraries/C and C++
