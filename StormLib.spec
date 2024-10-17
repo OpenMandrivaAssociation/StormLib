@@ -10,7 +10,7 @@ Release:        1
 Summary:        Library for work with Blizzard MPQ archive
 License:        MIT
 Group:          Development/Libraries/C and C++
-Url:            http://www.zezula.net/mpq.html
+Url:            https://www.zezula.net/mpq.html
 Source0:        https://github.com/ladislav-zezula/StormLib/archive/v%{version}/StormLib-%{version}.tar.gz
 
 BuildRequires:  cmake
