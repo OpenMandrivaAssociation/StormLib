@@ -5,7 +5,7 @@
 %define major 9
 
 Name:           StormLib
-Version:        9.25
+Version:        9.40
 Release:        1
 Summary:        Library for work with Blizzard MPQ archive
 License:        MIT
